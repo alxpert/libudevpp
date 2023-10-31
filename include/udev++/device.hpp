@@ -65,6 +65,7 @@ public:
     string driver() const noexcept;
     enum action action() const noexcept;
     string sysattr(const string&) const noexcept;
+    int set_sysattr(const string& attr, const string& value) noexcept;
     bool has_tag(const string&) const noexcept;
 
 private:

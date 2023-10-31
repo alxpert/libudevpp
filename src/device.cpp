@@ -149,6 +149,12 @@ string device::sysattr(const string& name) const noexcept
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+int device::set_sysattr(const string& name, const string& value) noexcept
+{
+    return impl::udev_device_set_sysattr_value(dev_.get(), name.data(), value.data());
+}
+
+////////////////////////////////////////////////////////////////////////////////
 bool device::has_tag(const string& name) const noexcept
 {
     return impl::udev_device_has_tag(dev_.get(), name.data());
